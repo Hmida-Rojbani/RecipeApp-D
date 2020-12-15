@@ -8,9 +8,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Ingredient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +28,13 @@ public class Ingredient {
 	
 	@ManyToOne
 	private Recipe recipe;
+
+	public Ingredient(String description, Double amount, UnitOfMeasure uom) {
+		super();
+		this.description = description;
+		this.amount = amount;
+		this.uom = uom;
+	}
+	
+	
 }

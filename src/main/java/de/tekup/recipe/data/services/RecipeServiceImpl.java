@@ -33,4 +33,10 @@ public class RecipeServiceImpl implements RecipeService {
 		
 	}
 
+	@Override
+	public void saveOrUpdate(Recipe recipe) {
+		reposRecipe.save(recipe);
+		
+	}
+
 }

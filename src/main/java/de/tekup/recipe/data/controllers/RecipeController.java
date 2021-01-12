@@ -56,5 +56,13 @@ public class RecipeController {
 		serviceRecipe.saveOrUpdate(recipe);
 		return "redirect:/";
 	}
+	
+	@GetMapping("/recipe/add")
+	public String newRecipe(Model model) {
+		// use recipeRequest (DTO) to support
+		RecipeRequest request = new RecipeRequest();
+		model.addAttribute("recipe", request);
+		return "recipe/recipeform"; 
+	}
 
 }

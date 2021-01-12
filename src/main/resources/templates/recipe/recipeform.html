@@ -51,20 +51,20 @@
                                 <div class="col-md-3 form-group" th:class="${#fields.hasErrors('prepTime')}
                                 ? 'col-md-3 form-group has-error' : 'col-md-3 form-group'">
                                     <label>Prep Time:</label>
-                                    <input type="time" class="form-control" th:field="*{prepTime}" th:errorclass="has-error"/>
-                                    <span class="help-block" th:if="${#fields.hasErrors('prepTime')}">
+                                    <input type="time" class="form-control" th:field="*{prepTimeTH}"  th:value="*{prepTime}"th:errorclass="has-error"/>
+                                    <span class="help-block" th:if="${#fields.hasErrors('prepTimeTH')}">
                                         <ul>
-                                            <li th:each="err : ${#fields.errors('prepTime')}" th:text ="${err}"/>
+                                            <li th:each="err : ${#fields.errors('prepTimeTH')}" th:text ="${err}"/>
                                         </ul>
                                     </span>
                                 </div>
                                 <div class="col-md-3 form-group" th:class="${#fields.hasErrors('cookTime')}
                                 ? 'col-md-3 form-group has-error' : 'col-md-3 form-group'">
                                     <label>Cooktime:</label>
-                                    <input type="time" class="form-control" th:field="*{cookTime}" th:errorclass="has-error"/>
-                                    <span class="help-block" th:if="${#fields.hasErrors('cookTime')}">
+                                    <input type="time" class="form-control" th:field="*{cookTimeTH}" th:errorclass="has-error"/>
+                                    <span class="help-block" th:if="${#fields.hasErrors('cookTimeTH')}">
                                         <ul>
-                                            <li th:each="err : ${#fields.errors('cookTime')}" th:text="${err}"/>
+                                            <li th:each="err : ${#fields.errors('cookTimeTH')}" th:text="${err}"/>
                                         </ul>
                                     </span>
                                 </div>
